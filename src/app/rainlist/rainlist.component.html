@@ -1,0 +1,18 @@
+<h1>rainlist works!</h1>
+<h1>{{errorMsg}}</h1>
+<!--<ul *ngFor="let rain of raindata">  
+     <li>{{rain.Year}} , {{rain.Glob}}</li>
+</ul>
+type="LineChart"
+-->
+<google-chart 
+[type]="chart.type" 
+[title]="chart.title" 
+style="width: 200%;"
+[data]=bardata 
+[columns]="chart.columnNames"
+[options]="chart.options"
+[dynamicResize]="true"
+>
+</google-chart>
+

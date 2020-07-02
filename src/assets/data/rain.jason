@@ -1,0 +1,7 @@
+    [
+     {"id":1, "name":"Seoul", "rank":1},
+     {"id":2, "name":"Pohang", "rank":5},
+     {"id":3, "name":"Busan", "rank":2},
+     {"id":4, "name":"Suwon", "rank":4},
+     {"id":5, "name":"Ihchon", "rank":3}
+    ]
