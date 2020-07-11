@@ -1,10 +1,10 @@
 import { JosephComponent } from './../joseph/joseph.component';
-//import { ChartdataComponent} from './../chartdata/chartdata.component';
+ 
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ChartBase, ChartEditorComponent, ChartType, FilterType } from 'angular-google-charts';
 import { Location } from '@angular/common';
-import { CdataService } from './../services/cdata.service';
-import { HttpClient } from '@angular/common/http';
+import { CdataService } from './../services/cdata.service';  // test small cdata
+ 
 @Component({
   selector: 'app-chart',
   templateUrl: './chart.component.html',
@@ -96,7 +96,7 @@ export class ChartComponent implements OnInit {
       .subscribe(data => {
         this.chartdata = data;
         for (let chart of this.chartdata) {
-          this.piedata.push([chart.name, Number(chart.age)]);
+          this.piedata.push([chart.name.toString(), Number(chart.age)]);
         }    
       },
                  error => this.errorMsg = error);

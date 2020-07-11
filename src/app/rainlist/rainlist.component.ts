@@ -10,7 +10,7 @@ import { ChartBase, ChartEditorComponent, ChartType, FilterType } from 'angular-
 export class RainlistComponent implements OnInit {
   public chart = {
     title: 'Temp Chart',
-    type: ChartType.ColumnChart,
+    type: ChartType.BarChart,
     
     data: [
       ['Copper', 8.94],
@@ -19,7 +19,7 @@ export class RainlistComponent implements OnInit {
       ['Platinum', 21.45]
     ],
    
-    columnNames: ['Element', 'Density'],
+    columnNames: ['Year', 'Temp','NHem'],
     options: {
       animation: {
         duration: 250,
@@ -54,9 +54,10 @@ export class RainlistComponent implements OnInit {
         .subscribe(rdata => {
           this.raindata = rdata;
           
+      //   this.bardata.push([0,1]);
           for (let chart of this.raindata) {
-            this.bardata.push([chart.Year.toString(),  Number(chart.Glob)]);
-          }
+             this.bardata.push([chart.Year.toString(),  Number(chart.Glob),Number(chart.NHem)]);
+              }
 
         } ,
                    error => this.errorMsg = error);
