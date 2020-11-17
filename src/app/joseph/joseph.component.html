@@ -1,27 +1,36 @@
+<h2>{{ greeting }} works! at joseph.component.html</h2>
+<button (click)="josephButton()">Joseph Button</button>
+<input type="text" [(ngModel)]="greeting" />
 
+<p class="center" *ngIf="greeting; else otherTemplate">
+  There is someting in greeting
+</p>
+<ng-template #otherTemplate>There is nothing in greeting</ng-template>
 
-  <h2>{{greeting}} works! at joseph.component.html</h2>
-  <button (click)="josephButton()">Joseph Button</button>
-  <input type="text" [(ngModel)]="greeting" >
-  
-  <p class ="center" *ngIf="greeting; else otherTemplate">There is someting in greeting</p>
-  <ng-template #otherTemplate>There is nothing in greeting</ng-template>
-  
-  <ul>
-      <li *ngFor="let name of family" >{{name}} </li>
-  
-  </ul>
-    <!-- Material Test -->
-    <div><mat-slider min="1" max="100" step="1" value="1"></mat-slider> </div>
-    <mat-slide-toggle>Slide me !</mat-slide-toggle>
-  
+<ul>
+  <li *ngFor="let name of family">{{ name }}</li>
+</ul>
 
-  <!-- from Jason file Test -->
- <!--<div *ngFor="let item of items" >{{item.Year}} {{item.Glob}}</div> -->
-  <app-chart></app-chart>
+<table>
+  <tr>
+    <th *ngFor="let name of family">{{ name }}</th>
+  </tr>
 
-  <app-citylist></app-citylist>
+  <tr *ngFor="let row of family">
+    <td *ngFor="let name of family">{{ row[name] }}</td>
+  </tr>
+</table>
 
-  <app-rainlist></app-rainlist> 
+<!-- Material Test -->
+<div><mat-slider min="1" max="100" step="1" value="1"></mat-slider></div>
+<mat-slide-toggle>Slide me !</mat-slide-toggle>
 
-  <app-chartdata></app-chartdata>
+<!-- from Jason file Test -->
+<!--<div *ngFor="let item of items" >{{item.Year}} {{item.Glob}}</div> -->
+<app-chart></app-chart>
+
+<app-citylist></app-citylist>
+
+<app-rainlist></app-rainlist>
+
+<app-chartdata></app-chartdata>

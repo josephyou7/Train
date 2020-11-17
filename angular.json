@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "w3-train"
+  "defaultProject": "w3-train",
+  "cli": {
+    "analytics": false
+  }
 }
